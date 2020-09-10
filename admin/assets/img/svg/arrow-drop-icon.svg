@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="5px" viewBox="0 0 9 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 55.2 (78181) - https://sketchapp.com -->
+    <title>ECD5C31E-FD3F-44FF-BCCA-36A42F1677E7</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M5.20890114,11.71 L7.79890122,14.3 C8.18890123,14.69 8.81890125,14.69 9.20890127,14.3 L11.7989014,11.71 C12.4289014,11.08 11.9789014,10 11.0889013,10 L5.90890116,10 C5.01890113,10 4.57890112,11.08 5.20890114,11.71 Z" id="path-1"></path>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Reports-3-(Filter)" transform="translate(-570.000000, -217.000000)">
+            <g id="Table-/-Components-/-Dashboard-Table" transform="translate(323.000000, 196.000000)">
+                <g id="Table-/-Column-/-Title" transform="translate(178.000000, 0.000000)">
+                    <g id="Column-Header" transform="translate(11.000000, 11.000000)">
+                        <g id="Icon" transform="translate(54.000000, 0.000000)">
+                            <g id="Arrow-Drop-Down-icon">
+                                <polygon id="Bounding_Boxes" points="0 0 17 0 17 24 0 24"></polygon>
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="arrow_drop_down" fill="#C0C5D2" fill-rule="nonzero" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

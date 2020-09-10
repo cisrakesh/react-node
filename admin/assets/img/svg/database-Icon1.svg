@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="22px" viewBox="0 0 19 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 55.2 (78181) - https://sketchapp.com -->
+    <title>7DE20805-AE0C-464B-B517-1A7332750EB8</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M16,1 L4,1 C2.9,1 2,1.9 2,3 L2,17 L4,17 L4,3 L16,3 L16,1 Z M15,5 L8,5 C6.9,5 6.01,5.9 6.01,7 L6,21 C6,22.1 6.89,23 7.99,23 L19,23 C20.1,23 21,22.1 21,21 L21,11 L15,5 Z M8,21 L8,7 L14,7 L14,12 L19,12 L19,21 L8,21 Z" id="path-1"></path>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard-(Expanded-Menu)" transform="translate(-25.000000, -444.000000)">
+            <g id="Sidebar" transform="translate(0.000000, 70.000000)">
+                <g id="Group">
+                    <g id="Database" transform="translate(0.000000, 350.000000)">
+                        <g id="Icon" transform="translate(23.000000, 23.000000)">
+                            <g id="Database-Icon">
+                                <polygon id="Bounding_Boxes" points="0 0 24 0 24 24 0 24"></polygon>
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="Shape" fill="#DA7340" fill-rule="nonzero" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

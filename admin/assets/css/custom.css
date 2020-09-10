@@ -1,0 +1,149 @@
+.my-error{
+    color: brown;
+}
+
+/* Datatable */
+#dataTable_filter {
+    text-align: right;
+}
+
+#dataTable_paginate{
+    text-align: right;
+}
+
+#dataTable_paginate ul.pagination{
+    margin: 2px 0;
+    white-space: nowrap;
+    justify-content: flex-end;
+}
+
+.actionIcon{
+    margin-right: 7px;
+}
+
+.profilePic {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Make the image to responsive */
+  .profilePic img {
+    width: 150px;
+    height: auto;
+  }
+  
+  /* The overlay effect (full height and width) - lays on top of the container and over the image */
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 31%;
+    right: 0;
+    height: 100%;
+    border-radius: 50%!important;
+    width: 150px;
+    opacity: 0;
+    transition: .3s ease;
+    background-color:transparent;
+  }
+  
+  /* When you mouse over the container, fade in the overlay icon*/
+  .profilePic:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* The icon inside the overlay is positioned in the middle vertically and horizontally */
+  .profilePic .icon {
+    color: rgb(56, 52, 52);
+    font-size: 40px;
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  /* When you move the mouse over the icon, change color */
+  .fa-edit:hover {
+    color: #eee;
+  }
+
+  .identityImage{
+    width: 70%;
+    height: 200px;
+  }
+
+  .editTitleTag
+  {
+    color: #ffffff;
+  }
+
+  .download-identity:hover
+  {
+   color:#3158c9;
+  }
+
+  .download-identity
+  {
+    cursor: pointer;
+  }
+  .userReport-block
+  {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 20px 28px;
+  }
+
+  .userReport-block b{
+    font-weight: 900;
+    font-size: 25px;
+  }
+
+  .space-50
+  {
+    height: 50px;
+  }
+
+  .ride-block
+  {
+    background-color:#d1d2e1 !important;
+  }
+
+  .ride-block h4
+  {
+    font-weight: 900;
+  }
+
+  .rdrDefinedRangesWrapper {
+    display: none;
+  }
+
+  .MuiDialog-paperWidthSm {
+    max-width: none !important;
+  }
+
+  .count-block{
+    font-size: 15px;
+    font-weight: 900 !important;
+  }
+
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    #select-data, #select-data * {
+      visibility: hidden;
+    }
+    #export-data, #export-data * {
+      visibility: visible;
+    }
+    #export-data {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+

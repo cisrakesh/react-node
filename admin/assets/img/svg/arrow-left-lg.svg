@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="16px" viewBox="0 0 11 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 55.2 (78181) - https://sketchapp.com -->
+    <title>0E68D4CB-06FB-497E-84C2-9FC50A27409E</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M22.0787501,12.7570828 L16.5820834,18.2537495 L11.0854166,12.7570828 C10.5329166,12.2045828 9.6404166,12.2045828 9.08791659,12.7570828 L9.08791659,12.7570828 C8.53541658,13.3095828 8.53541658,14.2020828 9.08791659,14.7545828 L15.5904167,21.2570828 C16.1429167,21.8095828 17.0354167,21.8095828 17.5879167,21.2570828 L24.0904168,14.7545828 C24.6429169,14.2020828 24.6429169,13.3095828 24.0904168,12.7570828 L24.0904168,12.7570828 C23.5379168,12.2187495 22.6312502,12.2045828 22.0787501,12.7570828 Z" id="path-1"></path>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Employment" transform="translate(-129.000000, -140.000000)">
+            <g id="Icons-/-Arrow-Left" transform="translate(118.000000, 131.000000)">
+                <g id="Arrow-Left-icon" transform="translate(-0.000000, 0.000000)">
+                    <polygon id="Bounding_Boxes" transform="translate(17.000000, 17.000000) rotate(-270.000000) translate(-17.000000, -17.000000) " points="0 0 34 0 34 34 0 34"></polygon>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#DA7340" fill-rule="nonzero" transform="translate(16.589167, 17.007083) rotate(-270.000000) translate(-16.589167, -17.007083) " xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

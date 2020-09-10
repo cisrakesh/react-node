@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="12px" viewBox="0 0 7 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 55.2 (78181) - https://sketchapp.com -->
+    <title>F8284829-C206-49C8-B1C4-7D28D527800E</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M15.585,9.005 L11.705,12.885 L7.825,9.005 C7.435,8.615 6.805,8.615 6.415,9.005 L6.415,9.005 C6.025,9.395 6.025,10.025 6.415,10.415 L11.005,15.005 C11.395,15.395 12.025,15.395 12.415,15.005 L17.005,10.415 C17.395,10.025 17.395,9.395 17.005,9.005 L17.005,9.005 C16.615,8.625 15.975,8.615 15.585,9.005 Z" id="path-1"></path>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard-(Expanded-Menu)" transform="translate(-31.000000, -99.000000)">
+            <g id="Sidebar" transform="translate(0.000000, 70.000000)">
+                <g id="Group">
+                    <g id="Expand">
+                        <g id="Icon" transform="translate(23.000000, 23.000000)">
+                            <g id="Arrow-Left-icon" transform="translate(-0.000000, 0.000000)">
+                                <polygon id="Bounding_Boxes" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " points="0 0 24 0 24 24 0 24"></polygon>
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="Mask" fill="#C0C5D2" fill-rule="nonzero" transform="translate(11.710000, 12.005000) rotate(-270.000000) translate(-11.710000, -12.005000) " xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

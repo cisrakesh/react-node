@@ -1,0 +1,1593 @@
+{
+    "info": {
+        "title": "Taxi Booking API",
+        "version": "1.0.0",
+        "description": "RESTful API description with Swagger"
+    },
+    "host": "localhost:3000",
+    "swagger": "2.0",
+    "paths": {
+        "/signup": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Registering User",
+                "description": null,
+                "operationId": "signup",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Signup"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Login User",
+                "description": null,
+                "operationId": "login",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/vehicle/add": {
+            "post": {
+                "tags": [
+                    "Vehicles"
+                ],
+                "summary": "Add My Vehicle",
+                "description": null,
+                "operationId": "addVehicle",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/addVehicle"
+                        }
+                    },
+                    {
+                        "name": "insurance_image",
+                        "in": "formData",
+                        "type": "file"
+                        
+                    },{
+                        "name": "registation_image",
+                        "in": "formData",
+                        "type": "file"
+                        
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/vehicle/mylist": {
+            "get": {
+                "tags": [
+                    "Vehicles","Own Vehicles"
+                ],
+                "summary": "List My Vehicle",
+                "description": null,
+                "operationId": "myVehicleList",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/vehicle/types": {
+            "get": {
+                "tags": [
+                    "Vehicles","Vehicle Ttypes"
+                ],
+                "summary": "List Vehicle Types",
+                "description": null,
+                "operationId": "VehicleTypeList",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/vehicle/view/:vehicleId": {
+            "get": {
+                "tags": [
+                    "Authentication",
+                    "Vehicle Data"
+                ],
+                "summary": "Get detail view of own vehicle",
+                "description": null,
+                "operationId": "getVehicleData",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/get-vehicles": {
+            "post": {
+                "tags": [
+                    "Authentication",
+                    "Vehicle Data"
+                ],
+                "summary": "Get all vehicle in a specific km range",
+                "description": null,
+                "operationId": "getVehicles",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/vehicleList"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "Vehicles not found"
+                    },
+                    "404": {
+                        "description": "Vehicles not found"
+                    }
+                }
+            }
+        },
+        "/profile": {
+            "get": {
+                "tags": [
+                    "Authentication",
+                    "Profile"
+                ],
+                "summary": "Get logged in user",
+                "description": null,
+                "operationId": "profile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Authentication",
+                    "Update Profile"
+                ],
+                "summary": "Get logged in user",
+                "description": null,
+                "operationId": "updateprofile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateProfile"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/driver-profile-data": {
+            "get": {
+                "tags": [
+                    "Authentication",
+                    "Driver Profile"
+                ],
+                "summary": "Get logged in Driver Profile",
+                "description": null,
+                "operationId": "getDriverProfile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Authentication",
+                    "Update Driver Profile"
+                ],
+                "summary": "Update logged in Driver Profile",
+                "description": null,
+                "operationId": "updateDriverProfile",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateDriverProfile"
+                        }
+                    },{
+                        "name": "licence_image",
+                        "in": "formData",
+                        "type": "file"
+                        
+                    },{
+                        "name": "identity_image",
+                        "in": "formData",
+                        "type": "file"
+                        
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/profile-picture": {
+            
+            "put": {
+                "tags": [
+                    "Authentication",
+                    "Update user profile pic"
+                ],
+                "summary": "Update User profile pic",
+                "description": null,
+                "operationId": "uploadUserProfilePic",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "profile_image",
+                        "in": "formData",
+                        "type": "file"
+                        
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/update-password": {
+            
+            "put": {
+                "tags": [
+                    "Authentication",
+                    "Update Password after login"
+                ],
+                "summary": "Update Password after login",
+                "description": null,
+                "operationId": "changeprofile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/changePassword"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/change-password": {
+            
+            "put": {
+                "tags": [
+                    "Authentication",
+                    "Change Password using forgot method"
+                ],
+                "summary": "Change Password using forgot method",
+                "description": null,
+                "operationId": "changePassword",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ChangeForgetPassword"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/registerednumber": {
+            
+            "post": {
+                "tags": [
+                    "Authentication",
+                    "Check phone is registered"
+                ],
+                "summary": "Checking if phone number is registered",
+                "description": null,
+                "operationId": "getregisterednumberstatus",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/isPhoneRegistered"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/admin/user-list": {
+            "post": {
+                "tags": [
+                    "Users",
+                    "User list"
+                ],
+                "summary": "get user list",
+                "description": null,
+                "operationId": "user-list",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value": "Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/userList"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/admin/fair-setup": {
+            "get": {
+                "tags": [
+                    "Authentication",
+                    "Settings"
+                ],
+                "summary": "get site settings",
+                "description": null,
+                "operationId": "site-setting",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Authentication",
+                    "Update Site Setting"
+                ],
+                "summary": "Update Site Setting",
+                "description": null,
+                "operationId": "updatesiteSetting",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateSetting"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/admin/user-stats": {
+            "get": {
+                "tags": [
+                    "Authentication",
+                    "User Stats"
+                ],
+                "summary": "get User count stats",
+                "description": null,
+                "operationId": "user-stats",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/admin/driver-profile/:userId": {
+            "get": {
+                "tags": [
+                    "Authentication",
+                    "get driver profile"
+                ],
+                "summary": "Get detail of driver profile",
+                "description": null,
+                "operationId": "getDriverProfileData",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Authentication",
+                    "Update Driver's doc status"
+                ],
+                "summary": "Update Driver's doc status",
+                "description": null,
+                "operationId": "updateDriverProfileDocStatusFromAdmin",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/updateDriverProfileDocStatusFromAdmin"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "User not found"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
+            }
+        },
+        "/ride/insert-ride-request": {
+            "post": {
+                "tags": [                    
+                    "Ride"
+                ],
+                "summary": "Insert the ride request made by user",
+                "description": null,
+                "operationId": "insertRequest",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/rideRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "Ride request failed"
+                    },
+                    "404": {
+                        "description": "Ride request failed"
+                    }
+                }
+            }
+        },
+        "/ride/get-ride-details": {
+            "post": {
+                "tags": [                
+                    "Ride"
+                ],
+                "summary": "Get the ride and passenger details with passing the ride id",
+                "description": null,
+                "operationId": "getPassenger",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/getPassenger"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "Get passenger request failed"
+                    },
+                    "404": {
+                        "description": "Get passenger request failed"
+                    }
+                }
+            }
+        },
+        "/ride/accept-ride-request": {
+            "post": {
+                "tags": [
+                    "Ride"
+                ],
+                "summary": "Driver can accept the ride request by passing the ride_id, Ride request appears on his/her(driver) device.",
+                "description": null,
+                "operationId": "acceptRideRequest",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/acceptRideRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "Accept ride request failed"
+                    },
+                    "404": {
+                        "description": "Accept ride request failed"
+                    }
+                }
+            }
+        },
+        "/ride/get-ride-driver-details": {
+            "post": {
+                "tags": [
+                    "Ride"
+                ],
+                "summary": "Passenger can get driver details who accepted the ride request",
+                "description": null,
+                "operationId": "driverInfoForRide",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/driverInfoForRide"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "Get driver of ride request failed"
+                    },
+                    "404": {
+                        "description": "Get driver of ride request failed"
+                    }
+                }
+            }
+        },
+        "/ride/ride-started-by-driver": {
+            "post": {
+                "tags": [
+                    "Ride"
+                ],
+                "summary": "When a driver start ride then this api update database accordingly",
+                "description": null,
+                "operationId": "rideStartedByDriver",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/rideStartedByDriver"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "Ride start request failed"
+                    },
+                    "404": {
+                        "description": "Ride start request failed"
+                    }
+                }
+            }
+        },
+        "/ride/update-ride-root": {
+            "post": {
+                "tags": [
+                    "Ride"
+                ],
+                "summary": "Ride started and after each specific time interval this API will update the root lat long value",
+                "description": null,
+                "operationId": "updateRideRoot",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/updateRideRoot"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "Update ride path request failed"
+                    },
+                    "404": {
+                        "description": "Update ride path request failed"
+                    }
+                }
+            }
+        },
+        "/ride/end-ride": {
+            "post": {
+                "tags": [
+                    "Ride"
+                ],
+                "summary": "This api trigger when ride ends by driver, and mark the ride as completed with storing the lat and long values",
+                "description": null,
+                "operationId": "endRide",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true,
+                        "type": "string",
+                        "value":"Bearer "
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/endRide"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "422": {
+                        "description": "End ride request failed"
+                    },
+                    "404": {
+                        "description": "End ride request failed"
+                    }
+                }
+            }
+        }
+     },
+    "definitions": {
+            "Signup": {
+                "type": "object",
+                "required": [
+                    "firstname",
+                    "lastname",
+                    "mobile_number",
+                    "password",
+                    "role_type"
+                ],
+                "properties": {
+                    "firstname": {
+                        "type": "string"
+                    },
+                    "lastname": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "mobile_number": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "confPassword": {
+                        "type": "string"
+                    },
+                    "role_type":{
+                        "type": "number"
+                    },
+                    "device_token":{
+                        "type": "string"
+                    }
+                }
+            },
+            "Login": {
+                "type": "object",
+                "required": [
+                    "mobile_number",
+                    "password"
+                ],
+                "properties": {
+                    "mobile_number": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "addVehicle":{
+                "type": "object",
+                "required": [
+                    "brand_make",
+                    "brand_model",
+                    "car_type",
+                    "car_color",
+                    "engine_number",
+                    "manufacture_year",
+                    "seat_capacity",
+                    "insurer",
+                    "insurance_image",
+                    "insurance_validity",
+                    "registration_number",
+                    "registation_image"
+                ],
+                "properties": {
+                    "brand_make": {
+                        "type": "string"
+                    },
+                    "brand_model": {
+                        "type": "string"
+                    },
+                    "car_type": {
+                        "type": "string"
+                    },
+                    "car_color": {
+                        "type": "string"
+                    },
+                    "engine_number": {
+                        "type": "string"
+                    },
+                    "manufacture_year": {
+                        "type": "number"
+                    },
+                    "seat_capacity": {
+                        "type": "number"
+                    },
+                    "insurer": {
+                        "type": "string"
+                    },
+                    "insurance_image":{
+                        "type": "file"
+                    },
+                    "insurance_validity":{
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "registration_number":{
+                        "type":"string"
+                    },
+                    "registation_image":{
+                        "type":"file"
+                    }
+
+                }
+            },
+            "UpdateProfile": {
+                "type": "object",
+                "required": [
+                    "firstname",
+                    "lastname",
+                    "mobile_number",
+                    "password",
+                    "role_type"
+                ],
+                "properties": {
+                    "firstname": {
+                        "type": "string"
+                    },
+                    "lastname": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "mobile_number": {
+                        "type": "string"
+                    }
+                    
+                }
+            },
+            "UpdateDriverProfile": {
+                "type": "object",
+                "required": [
+                    "licence_number",
+                    "licence_image",
+                    "identity_proof",
+                    "identity_image"
+                ],
+                "properties": {
+                    "licence_number": {
+                        "type": "string"
+                    },
+                    "licence_image": {
+                        "type": "file"
+                    },
+                    "identity_proof": {
+                        "type": "string"
+                    },
+                    "identity_image": {
+                        "type": "file"
+                    }
+                    
+                }
+            },
+            "changePassword": {
+                "type": "object",
+                "required": [
+                    "oldPassword",
+                    "password",
+                    "confPassword"
+                ],
+                "properties": {
+                    "oldPassword": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "confPassword": {
+                        "type": "string"
+                    }
+                    
+                }
+            },
+            "ChangeForgetPassword": {
+                "type": "object",
+                "required": [
+                    "mobile_number",
+                    "password",
+                    "confPassword"
+                ],
+                "properties": {
+                    "mobile_number": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "confPassword": {
+                        "type": "string"
+                    }
+                    
+                }
+            },
+            "isPhoneRegistered": {
+                "type": "object",
+                "required": [
+                    "mobile_number"
+                ],
+                "properties": {
+                    "mobile_number": {
+                        "type": "string"
+                    }
+                }
+            },
+            "userList": {
+                "type": "object",
+                "required": [
+                    "role"
+                    
+                ],
+                "properties": {
+                    "role": {
+                        "type": "number"
+                    },
+                    "perPage": {
+                        "type": "number"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "orderBy": {
+                        "type": "string"
+                    },
+                    "orderByAscDesc": {
+                        "type": "number"
+                    },
+                    "qwery": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateSetting": {
+                "type": "object",
+                "required": [
+                    "base_price",
+                    "base_kilometer",
+                    "rate_per_km",
+                    "commision_per_km"
+                ],
+                "properties": {
+                    "base_price": {
+                        "type": "number"
+                    },
+                    "base_kilometer": {
+                        "type": "number"
+                    },
+                    "rate_per_km": {
+                        "type": "number"
+                    },
+                    "commision_per_km": {
+                        "type": "number"
+                    }
+                    
+                }
+            },
+            "updateDriverProfileDocStatusFromAdmin":{
+                "type": "object",
+                "required": [
+                    "base_price",
+                    "base_kilometer",
+                    "rate_per_km",
+                    "commision_per_km"
+                ],
+                "properties": {
+                    "licence_verified": {
+                        "type": "boolean"
+                    },
+                    "identity_verified": {
+                        "type": "boolean"
+                    }
+                    
+                }
+            },
+            "vehicleList":{
+                "type": "object",
+                "required": [
+                    "lat",
+                    "long"
+                ],
+                "properties": {
+                    "lat": {
+                        "type": "number"
+                    },
+                    "long": {
+                        "type": "number"
+                    }                   
+                }
+            },
+            "rideRequest":{
+                "type": "object",
+                "required": [                   
+                    "source",
+                    "destination"
+                ],
+                "properties": {                   
+                    "source": {
+                        "type": "object",
+                        "properties": {
+                            "lat":{
+                                "type": "integer"
+                            },
+                            "long":{
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "destination": {
+                        "type": "object",
+                        "properties": {
+                            "lat":{
+                                "type": "integer"
+                            },
+                            "long":{
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "getPassenger":{
+                "type": "object",
+                "required": [
+                    "ride_id"                    
+                ],
+                "properties": {
+                    "ride_id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "acceptRideRequest":{
+                "type": "object",
+                "required": [
+                    "ride_id"                    
+                ],
+                "properties": {
+                    "ride_id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "driverInfoForRide":{
+                "type": "object",
+                "required": [
+                    "ride_id"                    
+                ],
+                "properties": {
+                    "ride_id": {
+                        "type": "string"
+                    }
+                } 
+            },
+            "rideStartedByDriver":{
+                "type": "object",
+                "required": [
+                    "ride_id",
+                    "start_lat",
+                    "start_long"
+                ],
+                "properties": {
+                    "ride_id": {
+                        "type": "string"
+                    },
+                    "start_lat": {
+                        "type": "string"
+                    },
+                    "start_long": {
+                        "type": "string"
+                    }
+                } 
+            },
+            "updateRideRoot":{
+                "type": "object",
+                "required": [
+                    "ride_id",
+                    "current_lat",
+                    "current_long"
+                ],
+                "properties": {
+                    "ride_id": {
+                        "type": "string"
+                    },
+                    "current_lat": {
+                        "type": "string"
+                    },
+                    "current_long": {
+                        "type": "string"
+                    }
+                } 
+            },
+            "endRide": {
+                "type": "object",
+                "required": [
+                    "ride_id",
+                    "end_lat",
+                    "end_long"
+                ],
+                "properties": {
+                    "ride_id": {
+                        "type": "string"
+                    },
+                    "end_lat": {
+                        "type": "string"
+                    },
+                    "end_long": {
+                        "type": "string"
+                    }
+                } 
+            }
+        
+    }
+}

@@ -1,0 +1,5 @@
+export const commissionSettingsConstants = {
+    C_SETTINGS_REQUEST: 'C_SETTINGS_REQUEST',
+    C_SETTINGS_SUCCESS: 'C_SETTINGS_SUCCESS',
+    C_SETTINGS_FAILURE: 'C_SETTINGS_FAILURE',
+};

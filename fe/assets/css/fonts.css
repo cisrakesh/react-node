@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'GoogleSans-Regular';
+  src: url('../fonts/GoogleSans-Regular/GoogleSans-Regular.eot?#iefix') format('embedded-opentype'),  
+  	   url('../fonts/GoogleSans-Regular/GoogleSans-Regular.woff') format('woff'), 
+	   url('../fonts/GoogleSans-Regular/GoogleSans-Regular.ttf')  format('truetype'), 
+	   url('../fonts/GoogleSans-Regular/GoogleSans-Regular.svg#GoogleSans-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'GoogleSans-Medium';
+  src: url('../fonts/GoogleSans-Medium/GoogleSans-Medium.eot?#iefix') format('embedded-opentype'),  
+  	   url('../fonts/GoogleSans-Medium/GoogleSans-Medium.woff') format('woff'), 
+	   url('../fonts/GoogleSans-Medium/GoogleSans-Medium.ttf')  format('truetype'), 
+	   url('../fonts/GoogleSans-Medium/GoogleSans-Medium.svg#GoogleSans-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'GoogleSans-Bold';
+  src: url('../fonts/GoogleSans-Bold/GoogleSans-Bold.eot?#iefix') format('embedded-opentype'),  
+  	   url('../fonts/GoogleSans-Bold/GoogleSans-Bold.woff') format('woff'), 
+	   url('../fonts/GoogleSans-Bold/GoogleSans-Bold.ttf')  format('truetype'), 
+	   url('../fonts/GoogleSans-Bold/GoogleSans-Bold.svg#GoogleSans-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
